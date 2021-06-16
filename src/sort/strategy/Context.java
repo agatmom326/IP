@@ -12,11 +12,12 @@ package sort.strategy;
 public class Context {
     private ISortStrategy strategy;
     
-    public void StrategyContext(ISortStrategy strategy){
+    public Context(ISortStrategy strategy){
         this.strategy = strategy;
     }
     
-    public void perform(double[] array){
-        strategy.Sortuj(array);
+    public double[] perform(double[] array){
+        array = strategy.Sortuj(array);
+        return array;
     }
 }
